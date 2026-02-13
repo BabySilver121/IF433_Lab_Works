@@ -4,7 +4,7 @@ fun main() {
     val radius = 7.0
     val pi = 3.14
 
-    var area: Double = pi * radius * radius
+    val area = pi * radius * radius
 
     println("Radius: $radius, Area: $area")
 
