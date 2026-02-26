@@ -12,17 +12,18 @@ class Employee(val name: String) {
             }
         }
 
-    // PRIVATE PROPERTY
     private var performanceRating: Int = 3
 
-    // FUNCTION untuk ubah rating
     fun increasePerformance() {
         performanceRating++
         println("Kinerja $name meningkat! Rating: $performanceRating")
     }
 
-    // FUNCTION untuk lihat status
     fun printStatus() {
         println("Karyawan: $name, Rating: $performanceRating")
     }
+
+    // COMPUTED PROPERTY
+    val tax: Double
+        get() = salary * 0.1
 }
