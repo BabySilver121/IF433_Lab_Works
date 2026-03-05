@@ -15,7 +15,6 @@ fun main() {
 
     println("\n--- Testing Electric Car ---")
     val myElectricCar = ElectricCar("tesla", 4, 100)
-
     myElectricCar.accelerate()
     myElectricCar.honk()
     myElectricCar.openTrunk()
