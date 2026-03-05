@@ -3,14 +3,21 @@ package oop_108111_FigoBarosky.week04
 fun main() {
 
     println("--- Testing Vehicle ---")
-    val generalVehicle = Vehicle(brand = "Sepeda Onthel")
+    val generalVehicle = Vehicle("Sepeda Onthel")
     generalVehicle.honk()
     generalVehicle.accelerate()
 
     println("\n--- Testing Car ---")
-    val myCar = Car(brand = "Toyota", numberOfDoors = 4)
+    val myCar = Car("Toyota", 4)
     myCar.openTrunk()
     myCar.honk()
     myCar.accelerate()
+
+    println("\n--- Testing Electric Car ---")
+    val myElectricCar = ElectricCar("tesla", 4, 100)
+
+    myElectricCar.accelerate()
+    myElectricCar.honk()
+    myElectricCar.openTrunk()
 
 }
