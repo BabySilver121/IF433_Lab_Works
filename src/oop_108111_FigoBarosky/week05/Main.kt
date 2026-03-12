@@ -33,11 +33,26 @@ fun main() {
 
     }
 
-    println("- TEST MATH HELPER -")
+    println("---- TEST MATH HELPER ---")
 
     val math = MathHelper()
 
     println("Luas Persegi (4) = ${math.hitungLuas(4)}")
     println("Luas Persegi Panjang (4,5) = ${math.hitungLuas(4,5)}")
     println("Luas Lingkaran (3.5) = ${math.hitungLuas(3.5)}")
+
+    println("-----------------------------")
+
+    println("=== SISTEM PEMBAYARAN ===")
+
+    val ewallet = EWallet("Figo", 50000.0)
+    val creditCard = CreditCard("Figo", 100000.0)
+
+    val metodePembayaran: List<PaymentMethod> = listOf(ewallet, creditCard)
+
+    for (method in metodePembayaran) {
+        if (method is EWallet) {
+            method.processPayment(75000.0)
+        }
+    }
 }
