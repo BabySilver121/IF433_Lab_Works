@@ -33,7 +33,7 @@ fun main() {
 
     }
 
-    println("=== TEST MATH HELPER ===")
+    println("- TEST MATH HELPER -")
 
     val math = MathHelper()
 
