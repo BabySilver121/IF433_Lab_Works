@@ -25,4 +25,5 @@ fun main() {
     val lamp = SmartLamp("1", "Lampu Ruang Tamu")
     val speaker = SmartSpeaker("2", "Google Nest Dapur")
     val cctv = SmartCCTV("3", "Ezviz Garasi")
+
 }
