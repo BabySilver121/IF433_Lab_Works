@@ -1,5 +1,10 @@
 package oop_108111_FigoBarosky.week06
 
-// ERROR: conflict method turnOn()
 class Smartphone : Camera, Phone {
+
+    override fun turnOn() {
+        super<Camera>.turnOn()
+        super<Phone>.turnOn()
+        println("Sistem operasi Smartphone berhasil booting.")
+    }
 }
