@@ -1,4 +1,8 @@
 package oop_108111_FigoBarosky.week06
 
-class Clickable {
+interface Clickable {
+
+    val name: String // abstract property
+
+    fun click()
 }
