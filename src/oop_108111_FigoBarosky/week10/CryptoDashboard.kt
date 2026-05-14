@@ -23,4 +23,6 @@ fun main() {
 
     txRepo.add(Transaction("TX001", 1200.0))
     txRepo.add(Transaction("TX002", 500.0))
+
+    println(txRepo.getAll())
 }
