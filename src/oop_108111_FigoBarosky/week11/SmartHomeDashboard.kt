@@ -63,4 +63,8 @@ fun main() {
     }
 
     println("Total daya: $totalPower")
+
+    homeDevices.forEach {
+        println(it.diagnose())
+    }
 }
