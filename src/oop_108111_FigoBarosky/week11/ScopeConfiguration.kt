@@ -19,4 +19,9 @@ fun main() {
     }.add(4)
 
     println("Setelah ditambah: $numbers")
+
+    println("\n=== TEST WITH ===")
+    with(user) {
+        println("User Detail -> Nama: $name, Umur: $age")
+    }
 }
