@@ -28,6 +28,22 @@ class EmailNotifier : NotificationService {
     }
 }
 
+interface PricingStrategy {
+    fun calculate(price: Double): Double
+}
+
+class RegularPricing : PricingStrategy {
+
+    override fun calculate(price: Double): Double =
+        price
+}
+
+class VipPricing : PricingStrategy {
+
+    override fun calculate(price: Double): Double =
+        price * 0.90
+}
+
 class SafeOrderProcessor(
     private val repo: OrderRepository,
     private val notifier: NotificationService
@@ -36,16 +52,13 @@ class SafeOrderProcessor(
     fun processOrder(
         itemName: String,
         basePrice: Double,
-        customerType: String
+        pricingStrategy: PricingStrategy
     ) {
 
-        val finalPrice = when (customerType) {
-            "REGULAR" -> basePrice
-            "VIP" -> basePrice * 0.90
-            else -> basePrice
-        }
+        val finalPrice =
+            pricingStrategy.calculate(basePrice)
 
-        repo.saveOrder("$itemName,$finalPrice,$customerType")
+        repo.saveOrder("$itemName,$finalPrice")
 
         notifier.sendNotification(
             "Pesanan $itemName telah dikonfirmasi"
